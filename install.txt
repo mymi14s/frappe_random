@@ -56,12 +56,12 @@ exit;
 
 #INSTALL FRAPPE AND ERPNEXT
 #first install bench
-python3.8 -m pip install frappe-bench
+python3.9 -m pip install frappe-bench
 
 # create bench and cd into it
 #test bench by executing bench if error, exit frappe user, log back in and retry 
 bench
-bench init --frappe-branch=version-13 --python=python3.8 frappe-bench
+bench init --frappe-branch=version-13 --python=python3.9 frappe-bench
 # once complete cd into frappe-bench if installation errors, check you have above 4gb or ram, enough storage and nginx is properly installed.
 
 #install erpnext
