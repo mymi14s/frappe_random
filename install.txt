@@ -56,7 +56,7 @@ exit;
 
 #INSTALL FRAPPE AND ERPNEXT
 #first install bench
-python3.9 -m pip install frappe-bench
+sudo pip3 install frappe-bench
 
 # create bench and cd into it
 #test bench by executing bench if error, exit frappe user, log back in and retry 
