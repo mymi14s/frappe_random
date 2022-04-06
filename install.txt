@@ -4,7 +4,8 @@ sudo apt -y install git build-essential python3.8 python3.8-dev python3.8-venv p
 sudo python3.8 -m pip install ansible
 sudo apt -y install mariadb-server libmysqlclient-dev
 
-# copy https://github.com/mymi14s/frappe_random/blob/master/my.cnf replace /etc/mysq/my.cnf
+# copy https://raw.githubusercontent.com/mymi14s/frappe_random/master/my.cnf
+# replace content of /etc/mysql/my.cnf with what you copied in the link above
 
 sudo systemctl restart mariadb
 sudo systemctl enable mariadb
