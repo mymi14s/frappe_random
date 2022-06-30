@@ -1,6 +1,6 @@
 sudo apt update
 sudo apt -y upgrade
-sudo apt -y install git build-essential python3.9 python3.9-dev python9.8-venv python3.9-doc python3-pip libffi-dev libssl-dev curl git pv
+sudo apt -y install git build-essential python3.9 python3.9-dev python3.8-venv python3.9-doc python3-pip libffi-dev libssl-dev curl git pv
 sudo python3.8 -m pip install ansible
 sudo apt -y install mariadb-server libmysqlclient-dev
 
