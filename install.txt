@@ -1,6 +1,6 @@
 sudo apt update
 sudo apt -y upgrade
-sudo apt -y install git build-essential python3.9 python3.9-dev python9.8-venv python3.9-doc python3-pip libffi-dev libssl-dev curl git pv
+sudo apt -y install git build-essential python3.9 python3.10-dev python3.10-venv python3.10-doc python3-pip libffi-dev libssl-dev curl git pv
 sudo python3.8 -m pip install ansible
 sudo apt -y install mariadb-server libmysqlclient-dev
 
@@ -44,6 +44,7 @@ sudo usermod -a -G sudo frappe
 sudo su - frappe
 
 # ONCE LOGGED IN AS ROOT, LOGIN TO MYSQL
+
 mysql -u root -p
 #if login error like "ERROR 1698 (28000): Access denied for user 'root'@'localhost'"
 # login to mysql as root user and execute the following
