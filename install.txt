@@ -1,7 +1,7 @@
 sudo apt update
 sudo apt -y upgrade
-sudo apt -y install git build-essential python3.9 python3.10-dev python3.10-venv python3.10-doc python3-pip libffi-dev libssl-dev curl git pv
-sudo python3.8 -m pip install ansible
+sudo apt -y install git build-essential python3.10 python3.10-dev python3.10-venv python3.10-doc python3-pip libffi-dev libssl-dev curl git pv
+sudo python3.10 -m pip install ansible
 sudo apt -y install mariadb-server libmysqlclient-dev
 
 # copy https://raw.githubusercontent.com/mymi14s/frappe_random/master/my.cnf
