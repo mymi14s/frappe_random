@@ -33,6 +33,8 @@ sudo systemctl enable redis-server
 #INSTALL WKHTMLROPDF AND FONTS
 sudo apt -y install libxrender1 libxext6 xfonts-75dpi xfonts-base
 # visit and download for your os:   https://wkhtmltopdf.org/downloads.html
+wget https://github.com/wkhtmltopdf/packaging/releases/download/0.12.6.1-2/wkhtmltox_0.12.6.1-2.jammy_amd64.deb
+sudo dpkg -i wkhtmltox_0.12.6.1-2.jammy_amd64.deb
 # if errors while install wkhtmltopdf execute
 sudo apt -f install
 
@@ -62,7 +64,7 @@ sudo pip3 install frappe-bench
 # create bench and cd into it
 #test bench by executing bench if error, exit frappe user, log back in and retry 
 bench
-bench init --frappe-branch=version-13 --python=python3.9 frappe-bench
+bench init --frappe-branch=version-13 --python=python3.10 frappe-bench
 # once complete cd into frappe-bench if installation errors, check you have above 4gb or ram, enough storage and nginx is properly installed.
 
 #install erpnext
