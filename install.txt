@@ -1,12 +1,11 @@
 sudo apt update
 sudo apt -y upgrade
-sudo apt -y install git build-essential python3.10 python3.10-dev python3.10-venv python3.10-doc python3-pip libffi-dev libssl-dev curl git pv
-sudo python3.10 -m pip install ansible
-sudo apt -y install mariadb-server libmysqlclient-dev
-sudo apt -y install mariadb-server libmariadb-dev-compat libmariadb-dev # if above fails
+sudo apt -y install git build-essential python3.11 python3.11-dev python3.11-venv python3.11-doc python3-pip libffi-dev libssl-dev curl git pv
+sudo python3.11 -m pip install ansible
+sudo apt -y install mariadb-server
 
-# copy https://raw.githubusercontent.com/mymi14s/frappe_random/master/my.cnf
-# replace content of /etc/mysql/my.cnf with what you copied in the link above
+# Update mysql configuration to use unicode
+sudo sed -i 's/utf8mb4_general_ci/utf8mb4_unicode_ci/g' /etc/mysql/mariadb.conf.d/50-server.cnf
 
 sudo systemctl restart mariadb
 sudo systemctl enable mariadb
@@ -15,12 +14,12 @@ sudo systemctl enable mariadb
 sudo mysql_secure_installation
 
 # INSTALL NODEJS
-sudo curl --silent --location https://deb.nodesource.com/setup_16.x | sudo bash -
+sudo curl -fsSL https://deb.nodesource.com/setup_20.x | sudo bash -
 # copy and execute the following lines to install yarn and nodejs
 
 curl -sL https://dl.yarnpkg.com/debian/pubkey.gpg | gpg --dearmor | sudo tee /usr/share/keyrings/yarnkey.gpg >/dev/null
      echo "deb [signed-by=/usr/share/keyrings/yarnkey.gpg] https://dl.yarnpkg.com/debian stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
-     sudo apt-get update && sudo apt-get install yarn
+     sudo apt-get update && sudo apt-get install yarn -y
 
 # INSTALL NGINX AND REDIS
 sudo apt -y install nginx nodejs redis-server
@@ -65,11 +64,11 @@ sudo pip3 install frappe-bench
 # create bench and cd into it
 #test bench by executing bench if error, exit frappe user, log back in and retry 
 bench
-bench init --frappe-branch=version-13 --python=python3.10 frappe-bench
+bench init --frappe-branch=version-15 --python=python3.11 frappe-bench
 # once complete cd into frappe-bench if installation errors, check you have above 4gb or ram, enough storage and nginx is properly installed.
 
 #install erpnext
-bench get-app --branch=version-13 erpnext
+bench get-app --branch=version-15 erpnext
 
 # CREATE NEW SITE
 bench new-site example.com --db-name=example
