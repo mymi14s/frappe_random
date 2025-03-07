@@ -1,5 +1,6 @@
 sudo apt update
 sudo apt -y upgrade
+sudo add-apt-repository ppa:deadsnakes/ppa
 sudo apt -y install git build-essential python3.11 python3.11-dev python3.11-venv python3.11-doc python3-pip libffi-dev libssl-dev curl git pv
 sudo python3.11 -m pip install ansible
 sudo apt -y install mariadb-server
