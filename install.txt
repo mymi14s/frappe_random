@@ -1,8 +1,8 @@
 sudo apt update
 sudo apt -y upgrade
 sudo add-apt-repository ppa:deadsnakes/ppa
-sudo apt -y install git build-essential python3.11 python3.11-dev python3.11-venv python3-pip libffi-dev libssl-dev curl git pv
-sudo python3.11 -m pip install ansible
+sudo apt -y install git build-essential python3.14 python3.14-dev python3.14-venv python3-pip libffi-dev libssl-dev curl git pv
+sudo python3.14 -m pip install ansible
 sudo apt -y install mariadb-server
 
 # Update mysql configuration to use unicode
