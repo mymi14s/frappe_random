@@ -15,7 +15,7 @@ sudo systemctl enable mariadb
 sudo mysql_secure_installation
 
 # INSTALL NODEJS
-sudo curl -fsSL https://deb.nodesource.com/setup_22.x | sudo bash -
+sudo curl -fsSL https://deb.nodesource.com/setup_24.x | sudo bash -
 # copy and execute the following lines to install yarn and nodejs
 
 curl -sL https://dl.yarnpkg.com/debian/pubkey.gpg | gpg --dearmor | sudo tee /usr/share/keyrings/yarnkey.gpg >/dev/null
